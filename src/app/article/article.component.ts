@@ -1,3 +1,4 @@
+import { Angular2RedditPage } from './../../../e2e/app.po';
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from './article.model';
 
@@ -11,6 +12,10 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @Input() article: Article;
+
+  constructor(){
+    this.article = new Article('Angular2', 'http://Angular2RedditPage.io', 10);
+  }
 
   voteUp(): boolean {
     this.article.voteUp();
